@@ -17,7 +17,7 @@ def create_user():
     email = request.json.get('email')
     if not name or not email:
         return "Name and email are required", BAD_REQUEST
-    user_service.create_user(name, email);
+    user_service.create_user(name, email)
     return jsonify({"message": "User created"}), CREATED
 
 # Get a list of users
@@ -53,3 +53,6 @@ def update_user(user_id):
 def delete_user(user_id):
     user_service.delete_user(user_id)
     return jsonify({"message": "User deleted"}), SUCCESS
+
+if __name__ == "__main__":
+    app.run()
