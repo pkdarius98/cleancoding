@@ -14,9 +14,9 @@ def execute_update(sql, params):
 def get_list(sql, params):
     conn = connect_db()
     cursor = conn.cursor()
-    list = cursor.execute(sql, params).fetchall()
+    result = cursor.execute(sql, params).fetchall()
     conn.close()
-    return list
+    return result
 
 def get_one(sql, params):
     conn = connect_db()

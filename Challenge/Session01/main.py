@@ -1,14 +1,9 @@
 from flask import Flask, request, jsonify
 
 import user_service
+from error_code import BAD_REQUEST, CREATED, SUCCESS, NOT_FOUND
 
 app = Flask(__name__)
-
-# ERROR CODE
-BAD_REQUEST = 400
-CREATED = 201
-SUCCESS = 200
-NOT_FOUND = 404
 
 # Create a new user
 @app.route('/users', methods=['POST'])
